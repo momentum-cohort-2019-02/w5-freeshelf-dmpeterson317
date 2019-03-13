@@ -4,6 +4,7 @@ from django.conf import settings
 import os.path
 import csv
 from django.core.files import File
+from django.utils.text import slugify
 
 def load_book_data(apps, schema_editor):
     """
@@ -26,8 +27,9 @@ def load_book_data(apps, schema_editor):
                 author = row['author'],
                 book_description = row['book_description'],
                 book_url = row['book_url'],
-                book_category = row['book_category']
-            )
+                book_category = row['book_category'],
+                slug=slugify(row['title'])
+            )            
             book.save()
 
 class Migration(migrations.Migration):

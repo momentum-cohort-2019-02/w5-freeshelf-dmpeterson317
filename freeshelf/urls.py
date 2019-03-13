@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.index_view, name='index'),
     path('books/<slug:slug>/', core_views.book_detail_view, name='book_detail'),
-    # path('', core_views.index_view, name="index"),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

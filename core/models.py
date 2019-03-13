@@ -26,7 +26,7 @@ class Book(models.Model):
     book_description = models.TextField(max_length=1000, help_text='Enter a brief description')
     book_url = models.URLField(default="")
     added_on = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(default='')
+    slug = models.SlugField()
     book_category = models.CharField(max_length=100, blank=True, help_text='Select a category for this book')
     favorited_count = models.IntegerField(default=0)
     
