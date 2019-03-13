@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block title %}<title>Freeshelf</title>{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      {% block meta %}{% endblock %}
+
+</head>
+<body>
+    <header class="flex items-center justify-between bg-green white ph3">
+    <div id="title">
+      <h1 class="white">Freeshelf</h1>
+    </div>
+    <div id="account-menu">
+      <a class="washed-blue" href="#">Login</a> | <a class="washed-blue" href="#">Register</a>
+    </div>
+  </header>
+  <nav id="category-nav" class="flex items-center">
+    <div>
+      Books by category:
+    </div>
+    <ul class="list ml1 pa0 flex flex-wrap">
+      <li class="mr2 pr2 bw1 br"><a href="#">CSS</a></li>
+      <li class="mr2 pr2 bw1 br"><a href="#">HTML</a></li>
+      <li class="mr2 pr2 bw1 br"><a href="#">JavaScript</a></li>
+      <li class="mr2 pr2 bw1 br"><a href="#">Python</a></li>
+      <li class=""><a href="#">R</a></li>
+    </ul>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

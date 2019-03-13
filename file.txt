@@ -1,0 +1,1 @@
+OrderedDict([('title', 'Rails Girls Guides'), ('author', 'Rails Girls'), ('book_description', 'These guides are built to provide tools and a community for women to understand technology and how to build their ideas. Organize your own events$$ submit new guides$$ or just use them to learn Rails.'), ('book_url', 'http://guides.railsgirls.com/'), ('book_category', 'Ruby on Rails')])
