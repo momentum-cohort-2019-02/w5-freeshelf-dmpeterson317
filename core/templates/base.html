@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    {% block title %}<title>Freeshelf</title>{% endblock %}
+    <title>Freeshelf</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
@@ -18,6 +18,9 @@
     <div id="title">
       <h1 class="white">Freeshelf</h1>
     </div>
+
+    {% block title %}{% endblock %}
+
     <div id="account-menu">
       <a class="washed-blue" href="#">Login</a> | <a class="washed-blue" href="#">Register</a>
     </div>
@@ -34,6 +37,7 @@
       <li class=""><a href="#">R</a></li>
     </ul>
   </nav>
+  {% comment %}  {% endcomment %}
   {% block content %}{% endblock %}
 </body>
 </html>

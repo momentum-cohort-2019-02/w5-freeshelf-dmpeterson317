@@ -3,9 +3,17 @@
 
 {% block content %}
     <h2>Recently added books</h2>
-    <ul>
+    <div class= "">
         {% for book in books %}
-        <li><a href="{% url 'book_detail' slug=book.slug %}"> {{ book.title }} </a></li>
+        <h1 class="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">
+            <a href="{% url 'book_detail' slug=book.slug %}"> {{ book.title }}</a>
+        </h1>
+            <div class= "pa3 bt b--black-10">
+                <p class="f6 f5-ns lh-copy measure">
+                    {{ book.book_description | truncatewords:50 }}
+                </p>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
+center mw5 mw6-ns br3 hidden ba b--black-10 mv4

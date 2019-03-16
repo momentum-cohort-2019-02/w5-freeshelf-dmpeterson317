@@ -7,4 +7,7 @@ class BookAdmin(admin.ModelAdmin):
     exclude = ('slug',)
 
 
-admin.site.register(BookCategory)
+@admin.register(BookCategory)
+class BookCategoryAdmin(admin.ModelAdmin):
+    exclude = ('slug',)
+    
