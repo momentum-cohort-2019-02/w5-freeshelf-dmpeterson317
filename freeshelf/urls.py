@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.index_view, name='index'),
     path('books/<slug:slug>/', core_views.book_detail_view, name='book-detail'),
-    path('category/<slug:slug>/', core_views.category_detail_view, name='category-detail'),
+    path('category/<slug:slug>/', core_views.BooksByCategoryDetailView.as_view(), name='category-detail'),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
@@ -36,3 +36,4 @@ if settings.DEBUG:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
 
     ] + urlpatterns
+    

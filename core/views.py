@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from core.models import Book, BookCategory
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views import generic
 
 def index_view(request):
     """View function for home page of site."""
@@ -27,7 +28,18 @@ def book_detail_view(request, slug):
     book = get_object_or_404(Book, slug=slug)
     return render(request, 'core/book_detail.html', {'book': book})
 
-def category_detail_view(request, slug):
-    category = get_object_or_404(BookCategory, slug=slug)
-    return render(request, 'core/category_detail.html', {'category': category})
+class BooksByCategoryDetailView(generic.DetailView):
+    model = BookCategory
+    template_name = 'core/books_by_category.html'
+    # context_object_name = 'category'
+    
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(BooksByCategoryListView, self).get_context_data(**kwargs)
+    #     context['categories'] = BookCategory.objects.all()
+    #     return context
+
+# def category_detail_view(request, slug):
+#     category = get_object_or_404(BookCategory, slug=slug)
+#     return render(request, 'core/category_detail.html', {'category': category})
     
