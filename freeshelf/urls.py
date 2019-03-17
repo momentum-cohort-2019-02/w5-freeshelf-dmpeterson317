@@ -14,13 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from core import views as core_views
+from django.conf import settings
 # from django.conf.urls.static import static
 # from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.index_view, name='index'),
-    path('books/<slug:slug>/', core_views.book_detail_view, name='book_detail'),
+    path('books/<slug:slug>/', core_views.book_detail_view, name='book-detail'),
+    path('category/<slug:slug>/', core_views.category_detail_view, name='category-detail'),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+        # For django versions before 2.0:
+        # url(r'^__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns

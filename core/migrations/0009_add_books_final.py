@@ -3,7 +3,7 @@ from django.db import migrations
 from django.conf import settings
 import os.path
 import csv
-from django.core.files import File
+# from django.core.files import File
 from django.utils.text import slugify
 
 def load_book_data(apps, schema_editor):
