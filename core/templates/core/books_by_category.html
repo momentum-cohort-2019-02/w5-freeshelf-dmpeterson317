@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-    {% for book in bookcategory.book_set.all %}
+    {% for book in category.book_set.all %}
         <div class="fl w-100 w-50-ns pa2">
             <h1 class="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">
                 <a href="{% url 'book-detail' slug=book.slug %}"> {{ book.title }}</a>

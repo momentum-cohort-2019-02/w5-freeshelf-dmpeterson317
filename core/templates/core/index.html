@@ -14,7 +14,14 @@
         </ul>
     </nav>
     <h2>Recently added books</h2>
-    <div class= "center mw9 ph3-ns br3 hidden ba b--black-10 mv4">  
+    <div class= "center mw9 ph3-ns br3 hidden ba b--black-10 mv4">
+        <form method="GET" action="{% url 'index' %}">
+            <div>
+                {{ sort_form.as_p }}
+            </div>
+            <button type="submit">Sort</button>
+        </form>
+
         <div class="cf ph2-ns">
             {% for book in books %}
             <div class="fl w-100 w-50-ns pa2">
